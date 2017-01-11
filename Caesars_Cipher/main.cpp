@@ -1,17 +1,26 @@
 #include "waste\stdafx.h"
 #define CATCH_CONFIG_MAIN
 #include <iostream>
-#include "Arg_handler.hpp"
-#include "File_handler.hpp"
-#include "Commands.hpp"
+#include "Handler.hpp"
 
 using namespace std;
 
 #ifdef CATCH_CONFIG_MAIN
 
 int main(int argc, char* argv[]) {
-  Commands cmds;
-  cout << cmds.decode_string_with_shift("a Dd1", 1) << endl;
+
+  Handler hndl(argc, argv);
+  hndl.run();
+
+  /*int argc = 5;
+  char* argv[5];
+
+  argv[0] = "filedir";
+  argv[1] = "input.txt";
+  argv[2] = "-s";
+  argv[3] = "2";
+  argv[4] = "output.txt";*/
+
   return 0;
 }
 
